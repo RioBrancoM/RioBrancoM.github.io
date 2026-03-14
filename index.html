@@ -1,23 +1,165 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 <title>Poesia Acústica</title>
-  <subtitle>Sobre Nós</subtitle>
+  <subtitle>Sobre nós</subtitle>
+<style>
+
+body{
+background:black;
+color:white;
+font-family:sans-serif;
+text-align:center;
+overflow:hidden;
+}
+
+#lyrics{
+height:180px;
+width:320px;
+margin:auto;
+overflow:hidden;
+border:1px solid white;
+padding:10px;
+}
+
+#lyrics p{
+animation: scrollLyrics 35s linear infinite;
+}
+
+@keyframes scrollLyrics{
+0%{transform: translateY(100%);}
+100%{transform: translateY(-100%);}
+}
+
+/* corações caindo */
+
+.heart{
+position:fixed;
+top:-10px;
+color:red;
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+0%{
+transform:translateY(-10px);
+}
+100%{
+transform:translateY(100vh);
+}
+}
+
+.playbutton{
+background:#1DB954;
+color:white;
+border:none;
+padding:15px 25px;
+font-size:18px;
+border-radius:30px;
+cursor:pointer;
+}
+
+</style>
+
 </head>
 
-<body style="text-align:center;background:black;color:white;font-family:sans-serif">
+<body>
 
 <h2>Isso conta sobre nós ❤️</h2>
 
-<video autoplay controls width="350">
-  <source src="video.mp4" type="video/mp4">
+<video controls width="350">
+<source src="WhatsApp Video 2026-03-14 at 15.34.38.mp4" type="video/mp4">
 </video>
 
 <br><br>
 
-<audio autoplay controls>
-  <source src="musica.mp3" type="audio/mpeg">
+<audio id="music">
+<source src="Poesia Acústica #2 - Sobre Nós - Delacruz I Maria I Ducon I Luiz Lins I Diomedes I Bk' I Kayuá.mp3" type="audio/mpeg">
 </audio>
+
+<button class="playbutton" onclick="document.getElementById('music').play()">
+▶️ Play
+</button>
+
+<br><br>
+
+<div id="lyrics">
+
+<p>
+
+Gavião fui feito rei, brilhava como ninguém<br><br
+Ela sabe tudo o que eu não sei<br><br
+Mas ansiava por alguém<br><br
+                            
+Logo me apresentei, inocentemente ou não<br><br
+Por ela eu me apaixonei<br><br
+Fiel feito gavião<br><br
+                       
+Por sete mares eu voei, mas de sete amores amei<br><br
+Mais de sete vidas gastei<br><br
+Aos 21, te encontrei<br><br
+Seja bem-vinda e jamais se viu coisa tão linda<br><br
+E e anda comigo porque ainda há muito tempo pra viver<br><br
+E nossas vidas baseadas em causas perdidas<br><br
+Procurando saída ou procurando esquecer<br><br
+                                             
+E cada vez que eu olho nos teus olhos<br><br
+Te espelho com desejo, eu te beijo e me vejo decretando o fim<br><br
+Tão simples como o fogo, eu tão novo não sabia, só queria<br><br
+E de novo, era um novo início pra mim<br><br
+                                           
+Viverá e verá, meu filho dará<br><br
+Sorrirá, cantará, dançará sem parar, sem parar<br><br
+Viverá e verá, meu filho dará<br><br
+Sorrirá, cantará, dançará<br><br
+                               
+E o céu será tua casa, voará com tuas asas<br><br
+Não se abalará por pouco, amaremos feito loucos<br><br
+Será livre como nunca e sorrirá como sempre<br><br
+Reinaremos por direito e que assim seja feito<br><br
+                                                   
+Viverá e verá, meu filho dará<br><br
+Sorrirá, cantará, dançará sem parar, sem parar<br><br
+Viverá e verá, meu filho dará<br><br
+Sorrirá, cantará, dançará<br><br
+                               
+Ah, quando um abraço apertado se encaixa<br><br
+É como se o mundo parasse ali, e é como se a vida acabasse<br><br
+Sei lá, quando um abraço apertado se encaixa<br><br
+É como se o mundo parasse ali, e é como se a vida acabasse<br><br
+                                                                
+Viverá e verá, meu filho dará<br><br
+Sorrirá, cantará, dançará sem parar, sem parar<br><br
+Viverá e verá, meu filho dará<br><br
+Sorrirá, cantará, dançará<br><br
+</p>
+
+</div>
+
+<script>
+
+/* gerar corações */
+
+setInterval(function(){
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.animationDuration=3+Math.random()*5+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{heart.remove();},8000);
+
+},500);
+
+</script>
 
 </body>
 </html>

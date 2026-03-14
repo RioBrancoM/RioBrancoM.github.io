@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  id="WhatsApp Video 2026-03-14 at 15.34.38.mp4"
 
 <head>
 <title>Poesia Acústica</title>
@@ -78,8 +79,8 @@ cursor:pointer;
 <source src="muica,mp3">
 </audio>
 
-<button class="playbutton" onclick="document.getElementById('music','video').play()">
-▶️ Play
+<button class="playbutton" onclick="playMedia()">
+▶ Play
 </button>
 
 <br><br>
@@ -158,6 +159,16 @@ document.body.appendChild(heart);
 setTimeout(()=>{heart.remove();},8000);
 
 },500);
+  <script>
+
+function playMedia(){
+
+document.getElementById("music").play();
+document.getElementById("video").play();
+
+}
+
+</script>
 
 </script>
 
